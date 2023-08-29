@@ -1,0 +1,151 @@
+EQ1
+System Information-NB (BCCH-DL-SCH-NB)
+
+Time : 17:34:26.555
+Vendor Header
+  Length : 38
+  Log Code (Hex) : 0xB0C0
+  HW Timestamp : (38065318.06 ms) 10:34:25.318
+  RRC Signaling Header
+    Log Packet Version : 19
+    RRC Release Number : 14.2.2
+    Radio Bearer ID : 0
+    Physical Cell ID : 401
+    E-ARFCN : 1791
+    Message Type : BCCH_DL_SCH_Message_NB_PDU
+    SIBs included : 0x0008
+Cell Info
+  EARFCN : 1791
+  Cell ID : 401
+criticalExtensions : systemInformation-r13
+systemInformation-r13
+  sib-TypeAndInfo-r13 : 
+    [0 ] : 
+      noName : choiceInSequence
+      choiceInSequence : sib3-r13
+      sib3-r13
+        q-Hyst-r13 : dB4
+        s-NonIntraSearch-r13 : 5
+        q-RxLevMin-r13 : -63
+        q-QualMin-r13 : -34
+        s-IntraSearchP-r13 : 30
+        t-Reselection-r13 : s3
+
+
+Message dump (Hex):
+    00 04 10 B0 E0 F1 00 
+/////////////////////////////////////////////////////////////////////////////////////////////
+EQ1
+LTE NB1 ML1 Serving Cell Measurements Response
+
+Time : 17:34:26.555
+Length : 48
+Log Code (Hex) : 0xB24D
+HW Timestamp : (38065318.03 ms) 10:34:25.318
+Version : 4
+
+  PCI : 401
+  Sub radio frame position : 0
+  RSSI : -86.00 dB
+  RSRP : -91.00 dB
+  RSRQ : -4.00 dB
+  SrxLev : 45
+  Rank : -87
+  SNR Linear : 895
+  SNR : 8.45 dB
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+EQ1
+LTE NB1 ML1 Cell Reselection
+
+Time : 17:35:32.715
+Length : 124
+Log Code (Hex) : 0xB24C
+HW Timestamp : (38131601.56 ms) 10:35:31.602
+Version : 4
+
+  Number of Layers : 1
+  LayerInfo : 
+    [0 ] : 
+      Number of Cells : 4
+      Frequency : 1791
+      CellInfo : 
+        [0 ] : 
+          PCI : 437
+          Rank : -100
+          TReselection Value : 65535
+        [1 ] : 
+          PCI : 436
+          Rank : -101
+          TReselection Value : 65535
+        [2 ] : 
+          PCI : 399
+          Rank : -92
+          TReselection Value : 2560
+        [3 ] : 
+          PCI : 401
+          Rank : -99
+          TReselection Value : 0
+////////////////////////////////////////////////////////////////////
+EQ1
+LTE NB1 ML1 Serving Cell Measurements Response
+
+Time : 17:35:34.838
+Length : 48
+Log Code (Hex) : 0xB24D
+HW Timestamp : (38133571.06 ms) 10:35:33.571
+Version : 4
+
+  PCI : 401
+  Sub radio frame position : 0
+  RSSI : -120.00 dB
+  RSRP : -140.00 dB
+  RSRQ : -30.00 dB
+  SrxLev : -4
+  Rank : -255
+  SNR Linear : 43
+  SNR : -4.79 dB
+//////////////////////////////////////////////////////////////////////
+EQ1
+LTE NB1 Neighbor Cell Measurements
+
+Time : 17:35:22.834
+Length : 208
+Log Code (Hex) : 0xB24E
+HW Timestamp : (38121520.41 ms) 10:35:21.520
+Version : 2
+
+  Number of Cells : 3
+  CellInfo : 
+    [0 ] : 
+      PCI : 437
+      SFN Offset : 6
+      Position Offset : 7587
+      Sub radio frame position : 4294967295
+      RSSI_dbm : -83
+      RSRP : -100.00 dB
+      RSRQ : -17.00 dB
+    [1 ] : 
+      PCI : 399
+      SFN Offset : 7
+      Position Offset : 3167
+      Sub radio frame position : 4294967250
+      RSSI_dbm : -76
+      RSRP : -92.00 dB
+      RSRQ : -15.00 dB
+    [2 ] : 
+      PCI : 436
+      SFN Offset : 6
+      Position Offset : 7589
+      Sub radio frame position : 4294967280
+      RSSI_dbm : -82
+      RSRP : -98.00 dB
+      RSRQ : -15.00 dB
+
+////////////////////////////////////////////////////////////////////////////////
+EQ1
+Time: 17:35:37.024
+
+Cell Reselection
+  New cell: EARFCN 1791, Cell 399
+////////////////////////////////////////////////////////////////////////////////
