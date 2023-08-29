@@ -116,7 +116,7 @@ out_file = "out_Rank.xlsx"
 wb = Workbook()
 ws = wb.active
 ws.append(["Time","Number of Cells","PCI","Rank","TReselection Value"])
-for entry in data_Cell_N:
+for entry in data_cell_Rank:
     ws.append([
         entry.get("Time",""),
         entry.get("Number of Cells",""),
