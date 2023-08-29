@@ -3,6 +3,7 @@ from openpyxl import Workbook
 input_file = "input.txt"
 data_Cell_S = []
 data_Cell_N = []
+data_cell_Rank =[]
 
 with open(input_file, "r") as file:
     current_entry = {}
@@ -40,12 +41,28 @@ with open(input_file, "r") as file:
                 current_entry["PCI"] = line.split(":")[1].strip()
             elif "RSRP :" in line:
                 current_entry["RSRP"] = line.split(":")[1].strip()
-            elif "RSRP :" in line:
-                current_entry["RSRP"] = line.split(":")[1].strip()
-            elif "///" in line:
-                check_2 = False
+            elif "RSRQ :" in line:
+                current_entry["RSRQ"] = line.split(":")[1].strip()
                 data_Cell_N.append(current_entry)
                 current_entry = {}
+            elif "///" in line:
+                check_2 = False
+        if check_3:
+            if "Time :" in line:
+                current_entry["Time"] = line.split(" : ")[1].strip()
+            elif "Number of Cells" in line:
+                current_entry["Number of Cells"] = line.split(":")[1].strip()
+            elif "PCI :" in line:
+                current_entry["PCI"] = line.split(":")[1].strip()
+            elif "Rank :" in line:
+                current_entry["Rank"] = line.split(":")[1].strip()
+            elif "TReselection Value :" in line:
+                current_entry["TReselection Value"] = line.split(":")[1].strip()
+                data_cell_Rank.append(current_entry)
+                current_entry = {}
+            elif "///" in line:
+                check_3 = False
+
 
             
         
@@ -91,3 +108,21 @@ for entry in data_Cell_N:
     ])
 wb.save(out_file)
 print("Write data to N_cell OK")
+
+for entry in data_cell_Rank:
+    print(entry)
+
+out_file = "out_Rank.xlsx"
+wb = Workbook()
+ws = wb.active
+ws.append(["Time","Number of Cells","PCI","Rank","TReselection Value"])
+for entry in data_Cell_N:
+    ws.append([
+        entry.get("Time",""),
+        entry.get("Number of Cells",""),
+        entry.get("PCI",""),
+        entry.get("Rank",""),
+        entry.get("TReselection Value","")
+    ])
+wb.save(out_file)
+print("Write data to Rank OK")
