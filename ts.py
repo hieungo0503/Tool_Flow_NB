@@ -10,6 +10,8 @@ with open(input_file, "r") as file:
     check_1=check_2=check_3 = False
     for line in file:
         line = line.strip()
+        if "***" in line:
+            check_1=check_2=check_3 = False
         if "Serving Cell Measurements Response" in line:
             check_1 = True
         elif "Neighbor Cell Measurements" in line:  
@@ -30,8 +32,12 @@ with open(input_file, "r") as file:
                 current_entry["Rank"] = line.split(":")[1].strip()
                 data_Cell_S.append(current_entry)
                 current_entry = {}
-            elif "///" in line:
-                check_1 = False
+            # elif "***" in line:
+            #     if "Neighbor Cell Measurements" in line:  
+            #         check_2 = True
+            #     elif "Cell Reselection" in line:      #for RANK  
+            #         check_3 = True
+            #     check_1 = False
         if check_2:
             if "Time :" in line:
                 current_entry["Time"] = line.split(" : ")[1].strip()
@@ -45,8 +51,12 @@ with open(input_file, "r") as file:
                 current_entry["RSRQ"] = line.split(":")[1].strip()
                 data_Cell_N.append(current_entry)
                 current_entry = {}
-            elif "///" in line:
-                check_2 = False
+            # elif "***" in line:
+            #     if "Serving Cell Measurements Response" in line:
+            #          check_1 = True
+            #     elif "Cell Reselection" in line:      #for RANK  
+            #          check_3 = True
+            #     check_2 = False
         if check_3:
             if "Time :" in line:
                 current_entry["Time"] = line.split(" : ")[1].strip()
@@ -60,8 +70,12 @@ with open(input_file, "r") as file:
                 current_entry["TReselection Value"] = line.split(":")[1].strip()
                 data_cell_Rank.append(current_entry)
                 current_entry = {}
-            elif "///" in line:
-                check_3 = False
+            # elif "***" in line:
+            #     if "Serving Cell Measurements Response" in line:
+            #         check_1 = True
+            #     elif "Neighbor Cell Measurements" in line:  
+            #         check_2 = True
+            #     check_3 = False
 
 
             
