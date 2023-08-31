@@ -19,11 +19,9 @@ with open(input_file, "r") as file:
         elif "Neighbor Cell Measurements" in line:  
             check_2 = True
         elif "Reselection Started Event" in line:
-            
             check_4 = True
         elif "Reselection Failure Event" in line:  
             check_5 = True
-
         elif "Cell Reselection" in line:      #for RANK  
             check_3 = True
         
@@ -86,7 +84,6 @@ with open(input_file, "r") as file:
             #         check_2 = True
             #     check_3 = False
         if check_4:
-            print("testttttt")
             if "Time :" in line:
                 current_entry["Time"] = line.split(" : ")[1].strip()
             elif "PCI :" in line:
